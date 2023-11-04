@@ -1,4 +1,5 @@
 import GoogleMap from "../Components/GoogleMap";
+import Slider from "../Components/Slider";
 import banner from '../assets/images/banner.jpg'
 
 
@@ -19,6 +20,10 @@ const Home = () => {
                         <GoogleMap></GoogleMap>
                     </div>
                 </div>
+            </section>
+
+            <section>
+                <Slider></Slider>
             </section>
         </div>
     );
