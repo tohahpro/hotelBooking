@@ -1,10 +1,10 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import SocialLogin from "../Login/SocialLogin";
 import { useState } from "react";
 import { AiOutlineEyeInvisible, AiOutlineEye } from 'react-icons/ai';
 import login from '../../assets/images/login.image.png'
 import toast from "react-hot-toast";
 import useAuth from "../../Hooks/useAuth";
+import SocialRegister from "./SocialRegister";
 
 
 const Register = () => {
@@ -114,7 +114,7 @@ const Register = () => {
                                     </Link>
 
                                     </p>
-                                    <SocialLogin></SocialLogin>
+                                    <SocialRegister></SocialRegister>
                                 </div>
 
                             </form>

@@ -6,7 +6,7 @@ import useAuth from '../../Hooks/useAuth';
 
 
 
-const SocialLogin = () => {
+const SocialRegister = () => {
 
     const { google } = useAuth()
 
@@ -36,7 +36,7 @@ const SocialLogin = () => {
             <div className="flex gap-12">
                 <div
                     onClick={() => handleSocialLogin(google)}
-                    className="py-2 px-8 flex items-center gap-2 border rounded-md hover:cursor-pointer hover:shadow-2xl shadow-gray-300">
+                    className="py-2 px-5 md:px-8 flex items-center gap-2 border rounded-md hover:cursor-pointer hover:shadow-2xl shadow-gray-300">
                     <FcGoogle className="text-2xl"></FcGoogle> <span className="text-lg font-medium">Google</span>
                 </div>
             </div>
@@ -44,4 +44,4 @@ const SocialLogin = () => {
     );
 };
 
-export default SocialLogin;
+export default SocialRegister;
