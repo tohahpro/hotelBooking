@@ -1,13 +1,14 @@
 import { Outlet } from "react-router-dom";
-import MainNavbar from "./MainNavbar";
+
 import Footer from "../../Footer/Footer";
 import { Toaster } from "react-hot-toast";
+import Navbar from "./Navbar";
 
 
 const MainLayout = () => {
     return (
         <div>
-            <MainNavbar></MainNavbar>
+            <Navbar></Navbar>
             <Outlet></Outlet>
             <hr />
             <Footer></Footer>

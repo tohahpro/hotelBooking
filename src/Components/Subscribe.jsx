@@ -1,4 +1,4 @@
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { AiOutlineEyeInvisible, AiOutlineEye } from 'react-icons/ai';
 import toast from "react-hot-toast";
@@ -8,7 +8,7 @@ import useAuth from "../Hooks/useAuth";
 
 const Subscribe = () => {
 
-    const { register, userUpdate } = useAuth()
+    const { register, } = useAuth()
 
     const [showPassword, setShowPassword] = useState(false)
 
@@ -18,11 +18,11 @@ const Subscribe = () => {
     const handleRegister = e => {
         e.preventDefault()
 
-        const name = e.target.name.value
+
         const email = e.target.email.value
         const password = e.target.password.value
-        const image = e.target.image.value
-        console.log(name, email, password, image);
+
+        console.log(email, password);
 
 
         // if (!/^(?=.*[a-z]).{8,}$/.test(password)) {
@@ -42,19 +42,12 @@ const Subscribe = () => {
         register(email, password)
             .then(res => {
 
-                userUpdate(name, image)
-                    .then(() => {
-
-                    })
                 if (res.user) {
-                    toast.success('Register successful')
+                    toast.success('Subscribe successful')
 
                     navigate(location?.state ? location.state : '/')
                 }
-
-
             })
-
             .catch(error => {
                 return toast.error(error.message)
             })
@@ -64,53 +57,28 @@ const Subscribe = () => {
 
 
     return (
-        <div className="flex justify-center mx-auto md:w-1/3">
-            <div className="card-body">
-                <h1 className="text-4xl font-semibold text-center"> Subscribe </h1>
-
+        <div className="flex justify-center py-28">
+            <div>
+                <h3 className="text-center text-4xl font-semibold">Subscribe</h3>
                 <form onSubmit={handleRegister}>
-                    <div className='mx-auto md:p-8 space-y-3'>
-
-                        {/* name field  */}
-                        <div>
-
-                            <input className='border text-black w-full rounded-md p-2 my-2' type="text" name="name" placeholder='Type your name' required />
-                        </div>
-
+                    <div className=' md:p-5 lg:flex gap-6'>
                         {/* email field  */}
-                        <div>
-
-                            <input className='border text-black w-full rounded-md p-3 my-2' type="text" name="email" placeholder='Type your email' required />
-                        </div>
-
-                        {/* image field  */}
-                        <div>
-
-                            <input className='border text-black w-full rounded-md p-2 my-2' type="text" name="image" placeholder='Image url' required />
-                        </div>
+                        <input className='border text-black w-96 rounded-md p-3 my-2' type="text" name="email" placeholder='Enter your email address' required />
 
                         {/* password field  */}
-                        <div>
-
-                            <div className='flex relative'>
-                                <input className='border text-black w-full rounded-md p-3 my-2 ' type={showPassword ? 'text' : 'password'} name="password" placeholder='Type your password' required />
-                                <span onClick={() => setShowPassword(!showPassword)} className="absolute top-6 right-2 text-lg text-black" required>{showPassword ? <AiOutlineEye></AiOutlineEye> : <AiOutlineEyeInvisible></AiOutlineEyeInvisible>}</span>
-                            </div>
+                        <div className='flex relative'>
+                            <input className='border text-black w-96 rounded-md p-3 my-2 ' type={showPassword ? 'text' : 'password'} name="password" placeholder='Enter your password' required />
+                            <span onClick={() => setShowPassword(!showPassword)} className="absolute top-6 right-2 text-lg text-black" required>{showPassword ? <AiOutlineEye></AiOutlineEye> : <AiOutlineEyeInvisible></AiOutlineEyeInvisible>}</span>
                         </div>
-                        <input type="submit" value="Subscribe" className="p-3 border hover:cursor-pointer w-full  rounded-lg bg-black text-white" />
 
-                        <p className='mt-2'>Already subscribe ? Please  <Link to='/login'>
-                            <span className='text-blue-600'>
-                                <span className='underline'>Login</span>
-                            </span>
-                        </Link>
-
-                        </p>
-
+                        <div className="flex items-center">
+                            <button className="px-6 py-[10px] font-medium rounded-md bg-[#BEAD8E] text-white text-lg border">Subscribe</button>
+                        </div>
                     </div>
 
                 </form>
             </div>
+
         </div>
     );
 };

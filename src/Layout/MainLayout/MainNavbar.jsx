@@ -16,8 +16,8 @@ const MainNavbar = () => {
     const { user, logout } = useAuth()
     const [open, setOpen] = useState(false)
 
-    const [color, setColor] = useState('transparent')
-    const [textColor, setTextColor] = useState('white')
+    // const [color, setColor] = useState('transparent')
+    // const [textColor, setTextColor] = useState('white')
 
 
     const [theme, setTheme] = useState('light-theme')
@@ -43,24 +43,23 @@ const MainNavbar = () => {
 
 
 
-    useEffect(() => {
-        const changeColor = () => {
-            if (window.scrollY >= 90) {
-                setColor('#9ba8f4e5')
-                setTextColor('#FFFFFF')
-            }
-            else {
-                setColor('#000000')
-                setTextColor('#FFFFFF')
-            }
-        }
-        window.addEventListener('scroll', changeColor);
-    }, [])
+    // useEffect(() => {
+    //     const changeColor = () => {
+    //         if (window.scrollY >= 90) {
+    //             setColor('#9ba8f4e5')
+    //             setTextColor('#000000')
+    //         }
+    //         else {
+    //             setColor('#000000')
+    //             setTextColor('#FFFFFF')
+    //         }
+    //     }
+    //     window.addEventListener('scroll', changeColor);
+    // }, [])
 
     return (
         <div>
-            <nav style={{ backgroundColor: `${color}` }}
-                className="left-0 right-0 fixed items-center justify-between lg:w-full z-10 ease-in duration-300 lg:px-56 py-2">
+            <nav className="lg:mx-56">
 
 
                 <div className="flex items-center justify-between">
@@ -78,7 +77,7 @@ const MainNavbar = () => {
                     </div>
 
                     <div
-                        style={{ color: `${textColor}` }}
+
                         className={`
                         absolute lg:flex flex-wrap mt-64 lg:m-0 w-full lg:w-fit p-8 lg:p-0 bg-black/80 duration-4000 ${open ? ' ' : 'hidden'} lg:static lg:bg-transparent text-center text-white lg:text-black space-y-2 z-20`}
                     >
