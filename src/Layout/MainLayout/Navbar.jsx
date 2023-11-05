@@ -47,12 +47,12 @@ const Navbar = () => {
                         </li>
                         <li>
                             <NavLink
-                                to="/"
+                                to="/all-rooms"
                                 className={({ isActive, isPending }) =>
                                     isPending ? "pending" : isActive ? "text-[#FF3811] underline" : ""
                                 }
                             >
-                                Home
+                                All Room
                             </NavLink>
                         </li>
                         <li>
