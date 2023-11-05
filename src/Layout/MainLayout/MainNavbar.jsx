@@ -1,5 +1,6 @@
 import { Link, NavLink } from "react-router-dom";
 import { BiMenu, BiMenuAltRight } from 'react-icons/bi';
+import { LuLogOut } from 'react-icons/lu';
 // import { FiLogIn } from 'react-icons/fi';
 import { useEffect, useState } from "react";
 import useAuth from "../../Hooks/useAuth";
@@ -133,7 +134,9 @@ const MainNavbar = () => {
                                             </li>
 
                                             <li>
-                                                <button className="py-2 px-3 hover:text-white" onClick={logout}>Logout</button>
+                                                <button className="py-2 px-3 hover:text-white flex items-center" onClick={logout}>Logout
+                                                    <LuLogOut className="font-bold text-base"></LuLogOut>
+                                                </button>
                                             </li>
 
                                             <label

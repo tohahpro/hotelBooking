@@ -2,7 +2,7 @@
 
 const GoogleMap = () => {
     return (
-        <div className="1/3">
+        <div className="h-1/5 md:h-full">
 
 
 

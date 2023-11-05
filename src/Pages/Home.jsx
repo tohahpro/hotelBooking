@@ -10,9 +10,9 @@ const Home = () => {
         <div className="pt-20">
             <img className="w-full" src={banner} alt="" />
 
-            <section className="mx-56">
+            <section className="md:mx-24 lg:mx-56">
                 <h2 className="text-center text-xl font-medium pt-10">Hotel Location</h2>
-                <div className="flex py-10">
+                <div className="lg:flex py-10">
                     <div className="flex-1">
 
                     </div>
