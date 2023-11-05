@@ -1,0 +1,132 @@
+[
+    {
+        "id": 1,
+        "room_description": "Deluxe King Suite with Ocean View",
+        "price_per_night": 199.99,
+        "room_size": "450 sq. ft",
+        "availability": "Available",
+        "room_images": [
+            "room1_1.jpg",
+            "room1_2.jpg",
+            "room1_3.jpg"
+        ],
+        "special_offers": "20% off for a 3-night stay."
+    },
+    {
+        "id": 2,
+        "room_description": "Executive Twin Room with City View",
+        "price_per_night": 149.99,
+        "room_size": "350 sq. ft",
+        "availability": "Available",
+        "room_images": [
+            "room2_1.jpg",
+            "room2_2.jpg",
+            "room2_3.jpg"
+        ],
+        "special_offers": "Free breakfast for all guests."
+    },
+    {
+        "id": 3,
+        "room_description": "Luxury Suite with Private Terrace",
+        "price_per_night": 299.99,
+        "room_size": "600 sq. ft",
+        "availability": "Available",
+        "room_images": [
+            "room3_1.jpg",
+            "room3_2.jpg",
+            "room3_3.jpg"
+        ],
+        "special_offers": null
+    },
+    {
+        "id": 4,
+        "room_description": "Standard Double Room",
+        "price_per_night": 99.99,
+        "room_size": "250 sq. ft",
+        "availability": "Available",
+        "room_images": [
+            "room4_1.jpg",
+            "room4_2.jpg",
+            "room4_3.jpg"
+        ],
+        "special_offers": null
+    },
+    {
+        "id": 5,
+        "room_description": "Family Suite with Pool Access",
+        "price_per_night": 249.99,
+        "room_size": "700 sq. ft",
+        "availability": "Available",
+        "room_images": [
+            "room5_1.jpg",
+            "room5_2.jpg",
+            "room5_3.jpg"
+        ],
+        "special_offers": "Kids stay for free."
+    },
+    {
+        "id": 6,
+        "room_description": "Penthouse Sky Villa with Panoramic Views",
+        "price_per_night": 499.99,
+        "room_size": "1,000 sq. ft",
+        "availability": "Available",
+        "room_images": [
+            "room6_1.jpg",
+            "room6_2.jpg",
+            "room6_3.jpg"
+        ],
+        "special_offers": "Complimentary spa treatment."
+    },
+    {
+        "id": 7,
+        "room_description": "Economy Single Room",
+        "price_per_night": 79.99,
+        "room_size": "180 sq. ft",
+        "availability": "Available",
+        "room_images": [
+            "room7_1.jpg",
+            "room7_2.jpg",
+            "room7_3.jpg"
+        ],
+        "special_offers": "10% discount for repeat guests."
+    },
+    {
+        "id": 8,
+        "room_description": "Honeymoon Suite with Jacuzzi",
+        "price_per_night": 349.99,
+        "room_size": "550 sq. ft",
+        "availability": "Available",
+        "room_images": [
+            "room8_1.jpg",
+            "room8_2.jpg",
+            "room8_3.jpg"
+        ],
+        "special_offers": "Bottle of champagne included."
+    },
+    {
+        "id": 9,
+        "room_description": "Beachfront Bungalow with Private Beach Access",
+        "price_per_night": 399.99,
+        "room_size": "800 sq. ft",
+        "availability": "Available",
+        "room_images": [
+            "room9_1.jpg",
+            "room9_2.jpg",
+            "room9_3.jpg"
+        ],
+        "special_offers": "Sunset cruise for guests."
+    },
+    {
+        "id": 10,
+        "room_description": "Business Class Suite with Office Space",
+        "price_per_night": 199.99,
+        "room_size": "400 sq. ft",
+        "availability": "Available",
+        "room_images": [
+            "room10_1.jpg",
+            "room10_2.jpg",
+            "room10_3.jpg"
+        ],
+        "special_offers": "Free airport shuttle service."
+    }
+]

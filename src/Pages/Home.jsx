@@ -1,6 +1,8 @@
 import GoogleMap from "../Components/GoogleMap";
 import Slider from "../Components/Slider";
+import Subscribe from "../Components/Subscribe";
 import banner from '../assets/images/banner.jpg'
+
 
 
 
@@ -24,6 +26,10 @@ const Home = () => {
 
             <section>
                 <Slider></Slider>
+            </section>
+
+            <section>
+                <Subscribe></Subscribe>
             </section>
         </div>
     );

@@ -71,7 +71,7 @@ const MainNavbar = () => {
                     </Link>
 
 
-                    <div className="lg:hidden justify-end text-2xl pr-2 text-slate-400" onClick={() => setOpen(!open)}>
+                    <div className="lg:hidden justify-end text-2xl pr-2 text-white" onClick={() => setOpen(!open)}>
                         {
                             open === true ? <BiMenuAltRight></BiMenuAltRight> : <BiMenu></BiMenu>
                         }
@@ -121,12 +121,14 @@ const MainNavbar = () => {
 
                                     <div className="dropdown dropdown-end">
                                         <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-                                            <div className="w-24 rounded-full">
-                                                <img src={user.photoURL}
-                                                    alt="" />
+                                            <div className="w-24 rounded-full border">
+                                                {
+                                                    user?.photoURL ? <img src={user.photoURL}
+                                                        alt="" /> : 'B'
+                                                }
                                             </div>
                                         </label>
-                                        <ul tabIndex={0} className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content rounded-box w-52 text-2xl font-medium bg-black/80 text-white">
+                                        <ul tabIndex={0} className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content rounded-box w-40 md:w-52 text-2xl font-medium bg-black/80 text-white">
                                             <li>
                                                 <a className="justify-between">
                                                     {user?.displayName}
