@@ -29,7 +29,7 @@ const Slider = () => {
                     spaceBetween={40}
                     slidesPerView={3}
                     autoplay={true}
-                    navigation
+                    // navigation
                     pagination={{ clickable: true }}
                 >
                     <SwiperSlide>
@@ -47,6 +47,17 @@ const Slider = () => {
                         <div className='p-10 h-full bg-white'>
                             <div className='flex justify-center'>
                                 <img src={client1} alt="" />
+                            </div>
+                            <div className='py-5 px-3 space-y-4'>
+                                <h2 className='text-center text-3xl font-medium'>Alice Johnson</h2>
+                                <p className='text-center text-base font-medium'>My stay at your hotel was exceptional. The service, cleanliness, and comfort exceeded my expectations. I will be returning soon!</p>
+                            </div>
+                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <div className='p-10 h-full bg-white'>
+                            <div className='flex justify-center'>
+                                <img src={client2} alt="" />
                             </div>
                             <div className='py-5 px-3 space-y-4'>
                                 <h2 className='text-center text-3xl font-medium'>Alice Johnson</h2>

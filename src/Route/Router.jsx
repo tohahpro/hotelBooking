@@ -6,6 +6,8 @@ import MainLayout from "../Layout/MainLayout/MainLayout";
 import Login from "../Pages/Login/Login";
 import MyBookings from "../Pages/MyBookings";
 import Register from "../Pages/Register/Register";
+import RoomDetails from "../Components/Booking/RoomDetails";
+
 
 const createRouter = createBrowserRouter([
     {
@@ -24,6 +26,15 @@ const createRouter = createBrowserRouter([
             {
                 path: 'register',
                 element: <Register></Register>
+            },
+            {
+                path: 'hotel-rooms',
+                element: <Register></Register>
+            },
+            {
+                path: 'room-details/:id',
+                element: <RoomDetails></RoomDetails>,
+                loader: ({ params }) => fetch(`http://localhost:4100/rooms/${params.id}`)
             },
             {
                 path: 'my-bookings',

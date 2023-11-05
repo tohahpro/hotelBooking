@@ -45,8 +45,12 @@ const Home = () => {
             <section>
                 <Slider></Slider>
             </section>
-            <section className="mx-56">
+            <section>
+
                 <FeaturedRoom></FeaturedRoom>
+                <div className="flex justify-center">
+                    <button className="px-6 py-4 border my-10 bg-[#BEAD8E]">VIEW ALL</button>
+                </div>
             </section>
 
             <section>
