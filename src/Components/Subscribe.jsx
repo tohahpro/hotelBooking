@@ -80,7 +80,7 @@ const Subscribe = () => {
                                 repeat={Infinity}
                             />
                         </h3>
-                        <p className="text-xl flex text-justify">Stay in the know! Subscribe to our newsletter and be the first to receive the latest updates, exclusive deals, and special offers delivered right to your inbox. Don't miss out on exciting promotions and insider information – join our community of subscribers today and experience a world of benefits tailored just for you. </p>
+                        <p className="text-xl flex text-justify">Stay in the know! Subscribe to our newsletter and be the first to receive the latest updates, exclusive deals, and special offers delivered right to your inbox. Do not miss out on exciting promotions and insider information – join our community of subscribers today and experience a world of benefits tailored just for you. </p>
                     </div>
                     <div className="flex justify-center">
                         <form onSubmit={handleRegister}>
