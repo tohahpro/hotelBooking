@@ -1,4 +1,5 @@
 
+import { TypeAnimation } from "react-type-animation";
 import FeaturedRoom from "../Components/FeaturedRoom";
 import GoogleMap from "../Components/GoogleMap";
 import PageTitle from "../Components/PageTitle";
@@ -19,7 +20,24 @@ const Home = () => {
                     <div className="flex-1 space-y-5 my-auto">
                         <label>THE ULTIMATE LUXURY EXPERIENCE</label>
                         <h1 className="text-2xl md:text-4xl lg:text-7xl ">
-                            The Perfect <br />
+
+                            <TypeAnimation
+                                sequence={[
+                                    // Same substring at the start will only be typed out once, initially
+                                    'The Best',
+                                    5000, // wait 1s before replacing "Mice" with "Hamsters"
+                                    'The Real',
+                                    5000,
+                                    'The Perfect',
+                                    5000
+
+                                ]}
+                                wrapper="span"
+                                speed={50}
+                                style={{ fontSize: '1em' }}
+                                repeat={Infinity}
+                            />
+                            <br />
                             Base For You
                         </h1>
                         <button className="mt-80 px-3 py-1 md:px-6 lg:px-10 md:py-2 lg:py-5 border bg-[#BEAD8E] text-white md:text-xl">
