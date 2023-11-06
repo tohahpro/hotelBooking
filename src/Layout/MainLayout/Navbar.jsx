@@ -30,7 +30,7 @@ const Navbar = () => {
                 </div>
 
                 <div
-                    className={`absolute lg:flex mt-12 w-full px-6 py-5 bg-black lg:m-0  lg:p-0 duration-2000
+                    className={`absolute lg:flex mt-12 w-full px-6 py-5 bg-white lg:m-0  lg:p-0 duration-2000
                      ${open ? ' ' : 'hidden'} lg:static 
                      lg:bg-transparent text-center space-y-2`}
                 >
@@ -39,7 +39,7 @@ const Navbar = () => {
                             <NavLink
                                 to="/"
                                 className={({ isActive, isPending }) =>
-                                    isPending ? "pending" : isActive ? "text-[#BEAD8E] underline" : ""
+                                    isPending ? "pending" : isActive ? "lg:px-6 lg:py-2 lg:border rounded-md mx-auto lg:bg-[#BEAD8E] text-[#BEAD8E] lg:text-white font-medium" : ""
                                 }
                             >
                                 Home
@@ -49,7 +49,7 @@ const Navbar = () => {
                             <NavLink
                                 to="/rooms"
                                 className={({ isActive, isPending }) =>
-                                    isPending ? "pending" : isActive ? "text-[#BEAD8E] underline" : ""
+                                    isPending ? "pending" : isActive ? "lg:px-6 lg:py-2 lg:border rounded-md mx-auto lg:bg-[#BEAD8E] text-[#BEAD8E] lg:text-white font-medium" : ""
                                 }
                             >
                                 Rooms
@@ -59,32 +59,13 @@ const Navbar = () => {
                             <NavLink
                                 to="/my-booking"
                                 className={({ isActive, isPending }) =>
-                                    isPending ? "pending" : isActive ? "text-[#BEAD8E] underline" : ""
+                                    isPending ? "pending" : isActive ? "lg:px-6 lg:py-2 lg:border rounded-md mx-auto lg:bg-[#BEAD8E] text-[#BEAD8E] lg:text-white font-medium" : ""
                                 }
                             >
                                 My Booking
                             </NavLink>
                         </li>
-                        <li>
-                            <NavLink
-                                to="/"
-                                className={({ isActive, isPending }) =>
-                                    isPending ? "pending" : isActive ? "text-[#BEAD8E] underline" : ""
-                                }
-                            >
-                                Home
-                            </NavLink>
-                        </li>
-                        <li>
-                            <NavLink
-                                to="/"
-                                className={({ isActive, isPending }) =>
-                                    isPending ? "pending" : isActive ? "text-[#BEAD8E] underline" : ""
-                                }
-                            >
-                                Home
-                            </NavLink>
-                        </li>
+
                     </ul>
 
 
@@ -94,7 +75,7 @@ const Navbar = () => {
                             user ?
                                 <>
                                     <div className="flex justify-center text-xl">
-                                        <button className="font-medium px-6 py-2 border rounded-md mx-auto" onClick={logout}>Logout</button>
+                                        <button className="text-black font-medium" onClick={logout}>Logout</button>
                                     </div>
                                 </>
                                 :
@@ -105,7 +86,7 @@ const Navbar = () => {
                                         <NavLink
                                             to="/login"
                                             className={({ isActive }) =>
-                                                isActive ? 'px-6 py-2 border rounded-md mx-auto bg-[#BEAD8E]text-white font-medium' : 'font-medium px-6 py-2 border rounded-md mx-auto'
+                                                isActive ? 'lg:px-6 lg:py-2 lg:border rounded-md mx-auto lg:bg-[#BEAD8E] text-[#BEAD8E] lg:text-white font-medium' : 'font-medium px-6 py-2 border rounded-md mx-auto'
                                             }
                                         >
                                             Login
@@ -142,7 +123,7 @@ const Navbar = () => {
                                 <NavLink
                                     to="/login"
                                     className={({ isActive }) =>
-                                        isActive ? 'px-6 py-2 border rounded-md mx-auto bg-[#BEAD8E] text-white font-medium text-xl' : 'font-medium px-6 py-2 border rounded-md mx-auto text-xl'
+                                        isActive ? 'lg:px-6 lg:py-2 lg:border rounded-md mx-auto lg:bg-[#BEAD8E] text-[#BEAD8E] lg:text-white font-medium' : 'font-medium px-6 py-2 border rounded-md mx-auto text-xl'
                                     }
                                 >
                                     Login
