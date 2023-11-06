@@ -49,7 +49,7 @@ const Home = () => {
 
                 <FeaturedRoom></FeaturedRoom>
                 <div className="flex justify-center">
-                    <button className="px-6 py-4 border my-10 bg-[#BEAD8E]">VIEW ALL</button>
+                    <button className="px-7 rounded-lg text-white font-medium py-3 border my-10 bg-[#BEAD8E]">VIEW ALL</button>
                 </div>
             </section>
 

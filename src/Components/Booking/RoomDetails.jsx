@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import PageTitle from "../PageTitle";
 
 
@@ -7,7 +7,7 @@ const RoomDetails = () => {
     const dataLoaded = useLoaderData({})
     console.log(dataLoaded);
 
-    const { title, description, img, internet, price, room_size, bed, park, market, lake, restaurants, cafe, shop } = dataLoaded || {}
+    const { _id, title, description, img, internet, price, room_size, bed, park, market, lake, restaurants, cafe, shop } = dataLoaded || {}
 
     return (
         <div className="mx-10 md:mx-20 lg:mx-56">
@@ -25,7 +25,7 @@ const RoomDetails = () => {
                 <p><span className="text-lg font-medium">Price : </span>{price}</p>
             </div>
 
-            <button className="btn mt-10">Booked Now</button>
+            <Link to={`/booking-form/${_id}`} className="btn mt-10">Booked Now</Link>
 
             <div className="md:flex gap-10 lg:gap-20 my-10 md:my-20">
                 <div className="">

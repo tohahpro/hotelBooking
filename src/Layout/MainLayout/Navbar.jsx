@@ -34,12 +34,12 @@ const Navbar = () => {
                      ${open ? ' ' : 'hidden'} lg:static 
                      lg:bg-transparent text-center space-y-2`}
                 >
-                    <ul className="mx-auto text-lg font-semibold lg:flex gap-8">
+                    <ul className="mx-auto text-xl font-semibold lg:flex gap-8">
                         <li>
                             <NavLink
                                 to="/"
                                 className={({ isActive, isPending }) =>
-                                    isPending ? "pending" : isActive ? "text-[#FF3811] underline" : ""
+                                    isPending ? "pending" : isActive ? "text-[#BEAD8E] underline" : ""
                                 }
                             >
                                 Home
@@ -47,19 +47,29 @@ const Navbar = () => {
                         </li>
                         <li>
                             <NavLink
-                                to="/all-rooms"
+                                to="/rooms"
                                 className={({ isActive, isPending }) =>
-                                    isPending ? "pending" : isActive ? "text-[#FF3811] underline" : ""
+                                    isPending ? "pending" : isActive ? "text-[#BEAD8E] underline" : ""
                                 }
                             >
-                                All Room
+                                Rooms
+                            </NavLink>
+                        </li>
+                        <li>
+                            <NavLink
+                                to="/my-booking"
+                                className={({ isActive, isPending }) =>
+                                    isPending ? "pending" : isActive ? "text-[#BEAD8E] underline" : ""
+                                }
+                            >
+                                My Booking
                             </NavLink>
                         </li>
                         <li>
                             <NavLink
                                 to="/"
                                 className={({ isActive, isPending }) =>
-                                    isPending ? "pending" : isActive ? "text-[#FF3811] underline" : ""
+                                    isPending ? "pending" : isActive ? "text-[#BEAD8E] underline" : ""
                                 }
                             >
                                 Home
@@ -69,17 +79,7 @@ const Navbar = () => {
                             <NavLink
                                 to="/"
                                 className={({ isActive, isPending }) =>
-                                    isPending ? "pending" : isActive ? "text-[#FF3811] underline" : ""
-                                }
-                            >
-                                Home
-                            </NavLink>
-                        </li>
-                        <li>
-                            <NavLink
-                                to="/"
-                                className={({ isActive, isPending }) =>
-                                    isPending ? "pending" : isActive ? "text-[#FF3811] underline" : ""
+                                    isPending ? "pending" : isActive ? "text-[#BEAD8E] underline" : ""
                                 }
                             >
                                 Home
@@ -93,22 +93,19 @@ const Navbar = () => {
                         {
                             user ?
                                 <>
-                                    <div className="flex justify-center">
-
-                                    </div>
-                                    <div className="flex justify-center">
+                                    <div className="flex justify-center text-xl">
                                         <button className="font-medium px-6 py-2 border rounded-md mx-auto" onClick={logout}>Logout</button>
                                     </div>
                                 </>
                                 :
                                 <>
-                                    <div className="flex justify-center">
+                                    <div className="flex justify-center text-xl">
 
 
                                         <NavLink
                                             to="/login"
                                             className={({ isActive }) =>
-                                                isActive ? 'px-6 py-2 border rounded-md mx-auto bg-blue-400 text-white font-medium' : 'font-medium px-6 py-2 border rounded-md mx-auto'
+                                                isActive ? 'px-6 py-2 border rounded-md mx-auto bg-[#BEAD8E]text-white font-medium' : 'font-medium px-6 py-2 border rounded-md mx-auto'
                                             }
                                         >
                                             Login
@@ -133,7 +130,7 @@ const Navbar = () => {
                                     <div className="flex justify-center items-center mr-4">
                                         <p className="font-medium">{user.email}</p>
                                     </div>
-                                    <div className="flex justify-center">
+                                    <div className="flex justify-center text-xl">
                                         <button className="font-medium px-6 py-2 border rounded-md mx-auto" onClick={logout}>Logout</button>
                                     </div>
                                 </>
@@ -145,7 +142,7 @@ const Navbar = () => {
                                 <NavLink
                                     to="/login"
                                     className={({ isActive }) =>
-                                        isActive ? 'px-6 py-2 border rounded-md mx-auto bg-blue-400 text-white font-medium' : 'font-medium px-6 py-2 border rounded-md mx-auto'
+                                        isActive ? 'px-6 py-2 border rounded-md mx-auto bg-[#BEAD8E] text-white font-medium text-xl' : 'font-medium px-6 py-2 border rounded-md mx-auto text-xl'
                                     }
                                 >
                                     Login

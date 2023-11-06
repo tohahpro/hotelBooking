@@ -4,10 +4,11 @@ import ErrorPage from "../Pages/ErrorPage";
 import Home from "../Pages/Home";
 import MainLayout from "../Layout/MainLayout/MainLayout";
 import Login from "../Pages/Login/Login";
-import MyBookings from "../Pages/MyBookings";
 import Register from "../Pages/Register/Register";
 import RoomDetails from "../Components/Booking/RoomDetails";
 import HotelRooms from "../Components/HotelRoom/HotelRooms";
+import MyBooking from "../Pages/MyBooking";
+import BookingForm from "../Components/Booking/BookingForm";
 
 
 const createRouter = createBrowserRouter([
@@ -29,19 +30,26 @@ const createRouter = createBrowserRouter([
                 element: <Register></Register>
             },
             {
-                path: 'all-rooms',
+                path: 'rooms',
                 element: <HotelRooms></HotelRooms>,
                 loader: () => fetch(`http://localhost:4100/rooms`)
             },
+
             {
                 path: 'room-details/:id',
                 element: <RoomDetails></RoomDetails>,
                 loader: ({ params }) => fetch(`http://localhost:4100/rooms/${params.id}`)
             },
             {
-                path: 'my-bookings',
-                element: <MyBookings></MyBookings>
+                path: 'booking-form/:id',
+                element: <BookingForm></BookingForm>,
+                loader: ({ params }) => fetch(`http://localhost:4100/rooms/${params.id}`)
+            },
+            {
+                path: 'my-booking',
+                element: <MyBooking></MyBooking>
             }
+
         ]
     }
 ]);

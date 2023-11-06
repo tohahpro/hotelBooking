@@ -26,7 +26,7 @@ const FeaturedRoom = () => {
                             <figure><img className="w-full" src={room.img} alt="Shoes" /></figure>
                             <div className="card-body">
                                 <div className="card-actions">
-                                    <Link to={`/room-details/${room._id}`} className="btn bg-[#BEAD8E]">Booked Now</Link>
+                                    <Link to={`/booking-form/${room._id}`} className="btn bg-[#BEAD8E]">Booked Now</Link>
                                 </div>
                             </div>
                         </div>
