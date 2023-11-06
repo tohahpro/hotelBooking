@@ -35,12 +35,12 @@ const HotelRooms = () => {
     }
 
     return (
-        <div className="lg:mx-56 my-20">
+        <div className="lg:px-56 py-20 bg-[#F8F8F8]">
 
             <PageTitle title={'All Room'}></PageTitle>
 
 
-            <div className="flex justify-center my-20 w-full">
+            <div className="flex justify-center py-20 w-full">
                 <form onSubmit={dateSubmit}>
                     <input type="date" name="date" className="p-3 border w-96" />
                     <input type="submit" value="Submit" className="p-3 border bg-[#BEAD8E]" />

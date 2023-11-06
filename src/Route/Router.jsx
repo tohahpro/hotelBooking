@@ -10,6 +10,7 @@ import HotelRooms from "../Components/HotelRoom/HotelRooms";
 import MyBooking from "../Pages/MyBooking";
 import BookingForm from "../Components/Booking/BookingForm";
 import BookingUpdate from "../Components/Booking/BookingUpdate";
+import ContactUs from "../Pages/ContactUs";
 
 
 const createRouter = createBrowserRouter([
@@ -54,6 +55,10 @@ const createRouter = createBrowserRouter([
                 path: 'booking-update/:id',
                 element: <BookingUpdate></BookingUpdate>,
                 loader: ({ params }) => fetch(`http://localhost:4100/bookings/${params.id}`)
+            },
+            {
+                path: 'contact-us',
+                element: <ContactUs></ContactUs>
             }
 
         ]

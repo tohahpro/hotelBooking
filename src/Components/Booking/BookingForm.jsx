@@ -58,13 +58,13 @@ const BookingForm = () => {
 
 
     return (
-        <div className="lg:mx-56">
+        <div className="lg:px-56 h-screen bg-[#F8F8F8]">
             <div>
                 <h2 className='text-3xl font-semibold'>Room name : {roomDataLoad?.title}</h2>
             </div>
             {/* from  */}
 
-            <div className='p-16 rounded-xl my-20  space-y-8'>
+            <div className='p-16 rounded-xl py-20  space-y-8'>
                 <form onSubmit={handleBooking}>
                     <div className='flex gap-8 '>
                         <div className='w-1/2'>

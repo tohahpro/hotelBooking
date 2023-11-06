@@ -65,6 +65,16 @@ const Navbar = () => {
                                 My Booking
                             </NavLink>
                         </li>
+                        <li>
+                            <NavLink
+                                to="/contact-us"
+                                className={({ isActive, isPending }) =>
+                                    isPending ? "pending" : isActive ? "lg:px-6 lg:py-2 lg:border rounded-md mx-auto lg:bg-[#BEAD8E] text-[#BEAD8E] lg:text-white font-medium" : ""
+                                }
+                            >
+                                Contact Us
+                            </NavLink>
+                        </li>
 
                     </ul>
 

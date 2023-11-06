@@ -10,7 +10,8 @@ export default {
         // poppins: "'Poppins', sans-seri",
         // caveat: "'Caveat', cursive",
         // kalam: "'Kalam', cursive;",
-        macondo: "'Macondo', cursive;"
+        macondo: "'Macondo', cursive;",
+        lora: "'Lora', serif;"
 
       }
     },

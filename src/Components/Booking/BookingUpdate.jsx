@@ -36,7 +36,7 @@ const BookingUpdate = () => {
     }
 
     return (
-        <div className='p-16 rounded-xl my-20  space-y-8 w-1/4 mx-auto'>
+        <div className='p-16 rounded-xl my-20  space-y-8 w-1/4 mx-auto bg-[#F8F8F8]'>
             <form onSubmit={handleUpdateDate}>
                 <div className='flex gap-8 '>
 

@@ -42,8 +42,8 @@ const MyBooking = () => {
 
 
     return (
-        <div className="min-h-screen lg:mx-56">
-            <h2 className="text-center mt-10 lg:mt-20">Booking : {bookings.length}</h2>
+        <div className="min-h-screen lg:px-56 bg-[#F8F8F8]">
+            <h2 className="text-center pt-10 lg:pt-20">Booking : {bookings.length}</h2>
 
 
             <div className="lg:py-20 px-4 lg:p-2">
