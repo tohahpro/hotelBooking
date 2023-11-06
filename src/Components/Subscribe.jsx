@@ -63,11 +63,11 @@ const Subscribe = () => {
                 <form onSubmit={handleRegister}>
                     <div className=' md:p-5 lg:flex gap-6'>
                         {/* email field  */}
-                        <input className='border text-black w-96 rounded-md p-3 my-2' type="text" name="email" placeholder='Enter your email address' required />
+                        <input className='border text-black md:w-96 rounded-md p-3 my-2' type="text" name="email" placeholder='Enter your email address' required />
 
                         {/* password field  */}
                         <div className='flex relative'>
-                            <input className='border text-black w-96 rounded-md p-3 my-2 ' type={showPassword ? 'text' : 'password'} name="password" placeholder='Enter your password' required />
+                            <input className='border text-black md:w-96 rounded-md p-3 my-2 ' type={showPassword ? 'text' : 'password'} name="password" placeholder='Enter your password' required />
                             <span onClick={() => setShowPassword(!showPassword)} className="absolute top-6 right-2 text-lg text-black" required>{showPassword ? <AiOutlineEye></AiOutlineEye> : <AiOutlineEyeInvisible></AiOutlineEyeInvisible>}</span>
                         </div>
 
