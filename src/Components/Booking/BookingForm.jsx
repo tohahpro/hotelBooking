@@ -21,7 +21,8 @@ const BookingForm = () => {
             date: date,
             email: email,
             price: price,
-            room_name: roomDataLoad.title
+            room_name: roomDataLoad.title,
+            image: roomDataLoad.img
 
         }
 

@@ -1,13 +1,33 @@
 import { Link, useLoaderData } from "react-router-dom";
 import PageTitle from "../PageTitle";
+import { useEffect, useState } from "react";
 
 
 const RoomDetails = () => {
 
     const dataLoaded = useLoaderData({})
-    console.log(dataLoaded);
+
+    const [bookingData, setBookingData] = useState('')
+    // const [match, setMatch] = useState('')
+    // console.log(match);
+    // const [dateMatch, setDateMatch] = useState('')
+
 
     const { _id, title, description, img, internet, price, room_size, bed, park, market, lake, restaurants, cafe, shop } = dataLoaded || {}
+
+    useEffect(() => {
+        fetch('http://localhost:4100/bookings')
+            .then(res => res.json())
+            .then(data => setBookingData(data))
+
+        // const roomMatch = bookingData.find(item => item.room_name == title)
+        // setMatch(roomMatch)
+
+        // const date = bookingData.find(item => item.date == title)
+
+
+    }, [title, bookingData])
+
 
     return (
         <div className="mx-10 md:mx-20 lg:mx-56">

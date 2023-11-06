@@ -48,6 +48,11 @@ const createRouter = createBrowserRouter([
             {
                 path: 'my-booking',
                 element: <MyBooking></MyBooking>
+            },
+            {
+                path: 'booking-update/:id',
+                element: <MyBooking></MyBooking>,
+                loader: ({ params }) => fetch(`http://localhost:4100/rooms/${params.id}`)
             }
 
         ]

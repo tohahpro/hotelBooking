@@ -3,6 +3,7 @@ import PageTitle from "../PageTitle";
 import { useEffect, useState } from "react";
 
 
+
 const HotelRooms = () => {
 
 
@@ -68,6 +69,7 @@ const HotelRooms = () => {
 
 
             </div>
+
         </div>
     );
 };
