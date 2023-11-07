@@ -22,14 +22,14 @@ const Navbar = () => {
 
                 {/* mobile view icon  */}
 
-                <div className="flex lg:hidden justify-end text-2xl pr-2 text-slate-400 mt-4" onClick={() => setOpen(!open)}>
+                <div className="flex lg:hidden justify-end text-3xl pr-2 text-slate-400 mt-4" onClick={() => setOpen(!open)}>
                     {
                         open === true ? <BiMenuAltRight></BiMenuAltRight> : <BiMenu></BiMenu>
                     }
                 </div>
 
                 <div
-                    className={`absolute lg:flex mt-12 w-full px-6 py-5 bg-white lg:m-0  lg:p-0 duration-2000
+                    className={`absolute lg:flex mt-12 w-full px-6 py-5 bg-white/80 lg:m-0  lg:p-0 duration-2000
                      ${open ? ' ' : 'hidden'} lg:static 
                      lg:bg-transparent text-center space-y-2`}
                 >

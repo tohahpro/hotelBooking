@@ -15,12 +15,12 @@ import { Link } from "react-router-dom";
 const Home = () => {
     return (
         <div className="bg-[#F8F8F8] ">
-            <div className="max-w-screen-xl mx-auto">
+            <div className="max-w-screen-xl mx-auto md:px-10">
                 <PageTitle title={'Home page'}></PageTitle>
                 <div className="lg:flex pt-24">
-                    <div className="flex-1 space-y-5 my-auto">
-                        <label>THE ULTIMATE LUXURY EXPERIENCE</label>
-                        <h1 className="text-2xl md:text-4xl lg:text-7xl ">
+                    <div className="flex-1 space-y-5 mt-20 mb-16">
+                        <p className="text-center lg:text-start">THE ULTIMATE LUXURY EXPERIENCE</p>
+                        <h1 className="text-2xl text-center lg:text-start md:text-4xl lg:text-7xl ">
 
                             <TypeAnimation
                                 sequence={[
@@ -41,7 +41,7 @@ const Home = () => {
                             <br />
                             Base For You
                         </h1>
-                        <button className="mt-80 px-3 py-1 md:px-6 lg:px-10 md:py-2 lg:py-5 border bg-[#BEAD8E] text-white md:text-xl">
+                        <button className="px-3 py-1 md:px-6 lg:px-10 md:py-2 lg:py-5 border bg-[#BEAD8E] text-white md:text-xl flex mx-auto lg:mx-0">
                             Learn More
                         </button>
                     </div>
@@ -50,11 +50,14 @@ const Home = () => {
                     </div>
                 </div>
 
-                <section className="md:mx-24">
-                    <h2 className="text-center text-xl font-medium pt-10">Hotel Location</h2>
-                    <div className="lg:flex py-10">
-                        <div className="flex-1">
-
+                <section className="">
+                    <h2 className="text-center text-4xl md:text-7xl font-medium pt-10">Hotel Location</h2>
+                    <div className="lg:flex lg:justify-between py-10 px-7 md:px-0">
+                        <div className="flex-1 flex justify-center py-10">
+                            <div>
+                                <h2 className="text-3xl md:text-5xl lg:text-7xl text-center lg:text-start">Welcome to <br /> Hotel Hub</h2>
+                                <p className="md:w-3/4 mx-auto lg:mx-0 text-center lg:text-start md:text-xl mt-10">Situated at House-06 Lake Dr Rd, Dhaka 1230, our hotel offers a perfect blend of comfort, convenience, and hospitality. Nestled in a serene neighborhood, we provide a peaceful escape from the bustling city life.</p>
+                            </div>
                         </div>
                         <div className="flex-1">
                             <GoogleMap></GoogleMap>

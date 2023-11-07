@@ -23,6 +23,19 @@ const Login = () => {
         const password = e.target.password.value
         console.log(email, password);
 
+        // if (!/^(?=.*[a-z]).{8,}$/.test(password)) {
+        //     return toast.error("Password length must have 8 characters")
+        // }
+
+        // else if (!/(?=.*[!@#$%^&*])/.test(password)) {
+        //     return toast.error("Password must have a special character")
+        // }
+        // else if (!/(?=.*[A-Z])/.test(password)) {
+        //     return toast.error("Password must have a capital letter")
+        // }
+        // else if (!/(?=.*\d)/.test(password)) {
+        //     return toast.error("Password must have a number")
+        // }
 
 
         Login(email, password)
@@ -76,7 +89,7 @@ const Login = () => {
                                             <span onClick={() => setShowPassword(!showPassword)} className="absolute top-6 right-2 text-lg" required>{showPassword ? <AiOutlineEye></AiOutlineEye> : <AiOutlineEyeInvisible></AiOutlineEyeInvisible>}</span>
                                         </div>
                                     </div>
-                                    <input type="submit" value="Login" className="p-3 border hover:cursor-pointer w-full  rounded-lg bg-black text-white" />
+                                    <input type="submit" value="Login" className="p-3 border hover:cursor-pointer w-full  rounded-lg bg-[#BEAD8E] text-white" />
 
                                     <p className='mt-2'>New Here ? Please  <Link to='/register'>
                                         <span className='text-blue-600'>

@@ -22,28 +22,27 @@ const Register = () => {
         const name = e.target.name.value
         const email = e.target.email.value
         const password = e.target.password.value
-        const image = e.target.image.value
-        console.log(name, email, password, image);
+        console.log(name, email, password);
 
 
-        // if (!/^(?=.*[a-z]).{8,}$/.test(password)) {
-        //     return toast.error("Password length must have 8 characters")
-        // }
+        if (!/^(?=.*[a-z]).{8,}$/.test(password)) {
+            return toast.error("Password length must have 8 characters")
+        }
 
-        // else if (!/(?=.*[!@#$%^&*])/.test(password)) {
-        //     return toast.error("Password must have a special character")
-        // }
-        // else if (!/(?=.*[A-Z])/.test(password)) {
-        //     return toast.error("Password must have a capital letter")
-        // }
-        // else if (!/(?=.*\d)/.test(password)) {
-        //     return toast.error("Password must have a number")
-        // }
+        else if (!/(?=.*[!@#$%^&*])/.test(password)) {
+            return toast.error("Password must have a special character")
+        }
+        else if (!/(?=.*[A-Z])/.test(password)) {
+            return toast.error("Password must have a capital letter")
+        }
+        else if (!/(?=.*\d)/.test(password)) {
+            return toast.error("Password must have a number")
+        }
 
         register(email, password)
             .then(res => {
 
-                userUpdate(name, image)
+                userUpdate(name)
                     .then(() => {
 
                     })
@@ -91,12 +90,6 @@ const Register = () => {
                                         <input className='border text-black w-full rounded-md p-3 my-2' type="text" name="email" placeholder='Type your email' required />
                                     </div>
 
-                                    {/* image field  */}
-                                    <div>
-
-                                        <input className='border text-black w-full rounded-md p-2 my-2' type="text" name="image" placeholder='Image url' required />
-                                    </div>
-
                                     {/* password field  */}
                                     <div>
 
@@ -105,7 +98,7 @@ const Register = () => {
                                             <span onClick={() => setShowPassword(!showPassword)} className="absolute top-6 right-2 text-lg text-black" required>{showPassword ? <AiOutlineEye></AiOutlineEye> : <AiOutlineEyeInvisible></AiOutlineEyeInvisible>}</span>
                                         </div>
                                     </div>
-                                    <input type="submit" value="Login" className="p-3 border hover:cursor-pointer w-full  rounded-lg bg-black text-white" />
+                                    <input type="submit" value="Login" className="p-3 border hover:cursor-pointer w-full  rounded-lg bg-[#BEAD8E] text-white" />
 
                                     <p className='mt-2'>Already Have Account ? Please  <Link to='/login'>
                                         <span className='text-blue-600'>

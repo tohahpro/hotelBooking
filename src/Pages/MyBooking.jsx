@@ -6,6 +6,7 @@ import { MdDelete } from 'react-icons/md';
 import { Link } from "react-router-dom";
 
 import useAxios from "../Hooks/useAxios";
+import Swal from "sweetalert2";
 
 
 const MyBooking = () => {
@@ -28,26 +29,38 @@ const MyBooking = () => {
 
 
     const handleDelete = (id) => {
-        const proceed = confirm('Are you sure you want to delete')
-        if (proceed) {
-            fetch(`http://localhost:4100/bookings/${id}`, {
-                method: 'DELETE'
-            })
-                .then(res => res.json())
-                .then(data => {
-                    console.log(data)
-                    if (data.deletedCount > 0) {
-                        alert('deleted successful')
-                        const remaining = bookings.filter(item => item._id !== id)
-                        setBookings(remaining)
-                    }
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+
+                fetch(`http://localhost:4100/bookings/${id}`, {
+                    method: 'DELETE'
                 })
-        }
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data)
+                        if (data.deletedCount > 0) {
+
+                            Swal.fire(
+                                'Deleted!',
+                                'Your Coffee has been deleted.',
+                                'success'
+
+                            )
+                            const remaining = bookings.filter(item => item._id !== id)
+                            setBookings(remaining)
+                        }
+                    })
+            }
+        })
     }
-
-
-
-
 
     return (
         <div className="min-h-screen lg:px-56 bg-[#F8F8F8]">
