@@ -32,8 +32,8 @@ const BookingForm = () => {
             date: date,
             email: email,
             price: price,
-            room_name: roomDataLoad.title,
-            image: roomDataLoad.img
+            room_name: detailsData.title,
+            image: detailsData.img
 
         }
 
@@ -63,38 +63,38 @@ const BookingForm = () => {
 
 
 
-    const handleReview = e => {
-        e.preventDefault()
+    // const handleReview = e => {
+    //     e.preventDefault()
 
-        const form = e.target
+    //     const form = e.target
 
-        const rating = form.rating.value
-        const comment = form.comment.value
-        const timeSpend = form.timeSpend.value
-        const review = {
+    //     const rating = form.rating.value
+    //     const comment = form.comment.value
+    //     const timeSpend = form.timeSpend.value
+    //     const review = {
 
-            rating: rating,
-            comment: comment,
-            timeSpend: timeSpend
-        }
+    //         rating: rating,
+    //         comment: comment,
+    //         timeSpend: timeSpend
+    //     }
 
-        console.log(review);
+    //     console.log(review);
 
 
-        fetch(`http://localhost:4100/rooms/${detailsData._id}`, {
-            method: 'PUT',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(review)
+    //     fetch(`http://localhost:4100/rooms/${detailsData._id}`, {
+    //         method: 'PUT',
+    //         headers: {
+    //             'content-type': 'application/json'
+    //         },
+    //         body: JSON.stringify(review)
 
-        })
+    //     })
 
-            .then(res => res.json())
-            .then(data => {
-                console.log(data)
-            })
-    }
+    //         .then(res => res.json())
+    //         .then(data => {
+    //             console.log(data)
+    //         })
+    // }
 
 
     return (
@@ -136,7 +136,7 @@ const BookingForm = () => {
                 {/* -------------- */}
                 <div className="py-10">
                     <h3 className="text-center text-3xl font-medium py-20">Your Review</h3>
-                    <form onSubmit={handleReview} className="space-y-8">
+                    <form className="space-y-8">
 
                         {/* form row  */}
                         <div className="md:flex gap-6">

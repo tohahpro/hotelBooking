@@ -1,12 +1,12 @@
-
+import logo from '../assets/images/hotel-hub.png'
 
 const Footer = () => {
     return (
-        <div className="px-32 lg:px-64">
+        <div className="px-28 lg:px-64">
             <footer className="py-10 md:flex justify-between  md:gap-0 flex-wrap mx-auto space-y-6">
 
-                <div className="flex justify-center items-center flex-col">
-                    <h2 className="text-4xl lg:text-7xl font-extrabold">Logo</h2>
+                <div className="">
+                    <img src={logo} alt="" />
                 </div>
                 <div className="flex flex-wrap flex-col">
                     <header className="footer-title">Services</header>

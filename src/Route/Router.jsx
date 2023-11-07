@@ -11,6 +11,7 @@ import MyBooking from "../Pages/MyBooking";
 import BookingForm from "../Components/Booking/BookingForm";
 import BookingUpdate from "../Components/Booking/BookingUpdate";
 import ContactUs from "../Pages/ContactUs";
+import PrivateRouter from "./PrivateRouter";
 
 
 const createRouter = createBrowserRouter([
@@ -44,12 +45,12 @@ const createRouter = createBrowserRouter([
             },
             {
                 path: 'booking-form/:id',
-                element: <BookingForm></BookingForm>,
+                element: <PrivateRouter><BookingForm></BookingForm></PrivateRouter>,
                 loader: () => fetch(`http://localhost:4100/rooms`)
             },
             {
                 path: 'my-booking',
-                element: <MyBooking></MyBooking>
+                element: <PrivateRouter><MyBooking></MyBooking></PrivateRouter>
             },
             {
                 path: 'booking-update/:id',

@@ -1,9 +1,8 @@
-import { NavLink } from "react-router-dom";
-
+import { Link, NavLink } from "react-router-dom";
 import { BiMenuAltRight, BiMenu } from 'react-icons/bi';
 import { useContext, useState } from "react";
-
 import { AuthContext } from "../../Provider/AuthProvider";
+import logo from '../../assets/images/hotel-hub.png'
 
 const Navbar = () => {
 
@@ -16,9 +15,9 @@ const Navbar = () => {
             <nav className="flex lg:items-center justify-between py-7 lg:px-56">
 
                 {/* brand logo  */}
-                <div>
-                    <h2 className="text-4xl font-extrabold">Logo</h2>
-                </div>
+                <Link to='/'>
+                    <img className="w-40 md:w-80" src={logo} alt="" />
+                </Link>
 
 
                 {/* mobile view icon  */}

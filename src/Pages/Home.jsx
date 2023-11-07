@@ -6,6 +6,7 @@ import PageTitle from "../Components/PageTitle";
 import Slider from "../Components/Slider";
 import Subscribe from "../Components/Subscribe";
 import banner from '../assets/images/Cover1.jpeg'
+import { Link } from "react-router-dom";
 
 
 
@@ -68,7 +69,7 @@ const Home = () => {
 
                     <FeaturedRoom></FeaturedRoom>
                     <div className="flex justify-center">
-                        <button className="px-7 rounded-lg text-white font-medium py-3 border my-10 bg-[#BEAD8E]">VIEW ALL</button>
+                        <Link to='/rooms' className="px-7 rounded-lg text-white font-medium py-3 border my-10 bg-[#BEAD8E]">VIEW ALL</Link>
                     </div>
                 </section>
 

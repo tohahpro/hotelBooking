@@ -11,11 +11,10 @@ const HotelRooms = () => {
     const roomsDataLoad = useLoaderData([])
     const [roomData, setRoomData] = useState(roomsDataLoad)
 
-    const [dateLoad, setDateLoad] = useState([])
+
     const [price, setPrice] = useState('')
 
 
-    const [availableRoom, setAvailableRoom] = useState('')
 
     useEffect(() => {
         fetch(`http://localhost:4100/rooms?sortField=price&sortOrder${price}`)
@@ -23,23 +22,7 @@ const HotelRooms = () => {
             .then(data => setRoomData(data))
     }, [price])
 
-    useEffect(() => {
-        fetch('http://localhost:4100/bookings')
-            .then(res => res.json())
-            .then(data => setDateLoad(data))
-    }, [])
 
-    const dateSubmit = (e) => {
-        e.preventDefault()
-        const date = e.target.date.value;
-
-        const dateMatch = dateLoad.filter(item => item.date === date)
-
-        const availableRoomLength = (roomsDataLoad.length - dateMatch.length)
-        setAvailableRoom(availableRoomLength)
-
-
-    }
 
     return (
         <div className="lg:px-56 py-20 bg-[#F8F8F8]">
@@ -53,14 +36,7 @@ const HotelRooms = () => {
                 </select>
             </div>
 
-            <div className="flex justify-center py-20 w-full">
-                <form onSubmit={dateSubmit}>
-                    <input type="date" name="date" className="p-3 border w-96" />
-                    <input type="submit" value="Submit" className="p-3 border bg-[#BEAD8E]" />
-                </form>
-            </div>
 
-            <h3>Available Room : {availableRoom}</h3>
 
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
 
