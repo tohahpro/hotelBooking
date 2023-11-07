@@ -5,6 +5,7 @@ import login from '../../assets/images/login.image.png'
 import SocialLogin from "./SocialLogin";
 import toast from "react-hot-toast";
 import useAuth from "../../Hooks/useAuth";
+import axios from "axios";
 
 const Login = () => {
 
@@ -28,6 +29,14 @@ const Login = () => {
             .then(res => {
                 if (res.user) {
                     toast.success('Login successful')
+                    const loggedInUser = res.user;
+                    console.log(loggedInUser)
+                    const user = { email }
+                    // Get Access Token
+                    axios.post('http://localhost:4100/jwt', user, { withCredentials: true })
+                        .then(res => {
+                            console.log(res.data);
+                        })
                 }
 
                 navigate(location?.state ? location.state : '/')

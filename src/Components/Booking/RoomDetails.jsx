@@ -1,10 +1,12 @@
 import { Link, useLoaderData, useParams } from "react-router-dom";
 import PageTitle from "../PageTitle";
 import { useEffect, useState } from "react";
+import useAuth from "../../Hooks/useAuth";
 
 
 const RoomDetails = () => {
 
+    const { user } = useAuth()
     const dataLoaded = useLoaderData({})
     const { id } = useParams()
     // const idInt = parseInt(id)
@@ -19,7 +21,7 @@ const RoomDetails = () => {
         setDetailsData(findDetails)
     }, [dataLoaded, id])
 
-    const { _id, title, description, img, internet, price, room_size, bed, park, market, lake, restaurants, cafe, shop } = detailsData || {}
+    const { _id, title, description, img, internet, price, room_size, bed, park, market, lake, restaurants, cafe, shop, rating, comment } = detailsData || {}
 
 
 
@@ -72,6 +74,14 @@ const RoomDetails = () => {
                 </div>
             </div>
 
+            <section>
+                <h4>Customer Review</h4>
+                <div className="p-7 w-1/2 border">
+                    <p>Name : {user.displayName}</p>
+                    <p>Rating : {rating}</p>
+                    <p>Comment : {comment}</p>
+                </div>
+            </section>
 
 
         </div>

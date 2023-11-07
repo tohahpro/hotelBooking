@@ -4,17 +4,24 @@ import { useEffect, useState } from "react";
 
 
 
+
 const HotelRooms = () => {
 
 
     const roomsDataLoad = useLoaderData([])
+    const [roomData, setRoomData] = useState(roomsDataLoad)
 
     const [dateLoad, setDateLoad] = useState([])
-
+    const [price, setPrice] = useState('')
 
 
     const [availableRoom, setAvailableRoom] = useState('')
 
+    useEffect(() => {
+        fetch(`http://localhost:4100/rooms?sortField=price&sortOrder${price}`)
+            .then(res => res.json())
+            .then(data => setRoomData(data))
+    }, [price])
 
     useEffect(() => {
         fetch('http://localhost:4100/bookings')
@@ -39,6 +46,12 @@ const HotelRooms = () => {
 
             <PageTitle title={'All Room'}></PageTitle>
 
+            <div>
+                <select onChange={(e) => setPrice(e.target.value)} name="" id="">
+                    <option value="asc">From low to high</option>
+                    <option value="desc">From high to low</option>
+                </select>
+            </div>
 
             <div className="flex justify-center py-20 w-full">
                 <form onSubmit={dateSubmit}>
@@ -52,7 +65,7 @@ const HotelRooms = () => {
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
 
                 {
-                    roomsDataLoad.map((room, idx) =>
+                    roomData.map((room, idx) =>
                         <div key={idx}>
                             <Link to={`/room-details/${room._id}`}>
                                 <div className="rounded-2xl border">

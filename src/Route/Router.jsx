@@ -45,7 +45,7 @@ const createRouter = createBrowserRouter([
             {
                 path: 'booking-form/:id',
                 element: <BookingForm></BookingForm>,
-                loader: ({ params }) => fetch(`http://localhost:4100/rooms/${params.id}`)
+                loader: () => fetch(`http://localhost:4100/rooms`)
             },
             {
                 path: 'my-booking',
