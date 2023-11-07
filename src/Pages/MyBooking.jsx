@@ -5,17 +5,25 @@ import { BsPencilFill } from 'react-icons/bs';
 import { MdDelete } from 'react-icons/md';
 import { Link } from "react-router-dom";
 
+import useAxios from "../Hooks/useAxios";
+
 
 const MyBooking = () => {
 
+    const axiosSecure = useAxios()
     const { user } = useAuth()
     const [bookings, setBookings] = useState([])
+    const url = `http://localhost:4100/bookings?email=${user?.email}`
+
 
     useEffect(() => {
-        fetch(`http://localhost:4100/bookings?email=${user?.email}`)
-            .then(res => res.json())
-            .then(data => setBookings(data))
-    }, [user])
+
+        axiosSecure.get(url, { withCredentials: true })
+            .then(res => {
+                setBookings(res.data)
+            })
+
+    }, [url, axiosSecure]);
 
 
 

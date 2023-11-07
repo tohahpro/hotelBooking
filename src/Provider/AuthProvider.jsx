@@ -2,6 +2,7 @@ import { createContext, useEffect, useState } from "react";
 import PropTypes from 'prop-types';
 import { GoogleAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 import auth from "../Firebase/firebase.config";
+import axios from "axios";
 
 export const AuthContext = createContext(null)
 
@@ -12,6 +13,7 @@ const AuthProvider = ({ children }) => {
     const [user, setUser] = useState({})
 
     const [loading, setLoading] = useState(true)
+
 
 
 
@@ -51,14 +53,30 @@ const AuthProvider = ({ children }) => {
 
     useEffect(() => {
         const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
+            const userEmail = currentUser?.email || user?.email
+            const loggedUser = { email: userEmail }
             setUser(currentUser);
             setLoading(false);
+
+            if (currentUser) {
+                axios.post("http://localhost:4100/jwt", loggedUser, { withCredentials: true })
+                    .then(res => {
+                        console.log('Token response', res.data);
+                    })
+
+            }
+            else {
+                axios.post("http://localhost:4100/logout", loggedUser, { withCredentials: true })
+                    .then(res => {
+                        console.log("Clear token", res.data);
+                    })
+            }
         });
 
         return () => {
             return unSubscribe();
         };
-    }, []);
+    }, [user?.email]);
 
     console.log(user)
 
