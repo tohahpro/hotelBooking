@@ -1,6 +1,7 @@
 import { useLoaderData, useParams } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
 import { useEffect, useState } from "react";
+import toast from "react-hot-toast";
 
 const BookingForm = () => {
 
@@ -52,7 +53,7 @@ const BookingForm = () => {
             .then(data => {
                 console.log(data)
                 if (data.insertedId) {
-                    alert('booking successful')
+                    toast.success('Login successful')
                 }
 
             })
@@ -129,7 +130,7 @@ const BookingForm = () => {
                         </div>
                     </div>
 
-                    <input type="submit" value="Booking" className='text-center w-full bg-[#FF3811] btn text-white mt-10' />
+                    <input type="submit" value="Booking" className='text-center w-full bg-[#BEAD8E] btn text-white mt-10' />
                 </form>
 
 
@@ -179,7 +180,7 @@ const BookingForm = () => {
                             </label>
                         </div>
 
-                        <input type="submit" value="Add Product" className="btn btn-block bg-black text-white hover:bg-black hover:text-red-500 hover:border-red-500" />
+                        <input type="submit" value="Add Product" className="btn btn-block bg-[#BEAD8E] text-white hover:bg-black hover:text-red-500 hover:border-red-500" />
 
                     </form>
                 </div>

@@ -1,3 +1,4 @@
+import toast from "react-hot-toast";
 import { useLoaderData } from "react-router-dom";
 
 
@@ -28,7 +29,7 @@ const BookingUpdate = () => {
             .then(data => {
                 console.log(data)
                 if (data.modifiedCount) {
-                    alert('update complete')
+                    toast.success('update complete')
                 }
             })
 
