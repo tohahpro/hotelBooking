@@ -1,4 +1,4 @@
-import { Link, useLoaderData } from "react-router-dom";
+import { Link, useLoaderData, useParams } from "react-router-dom";
 import PageTitle from "../PageTitle";
 import { useEffect, useState } from "react";
 
@@ -6,14 +6,23 @@ import { useEffect, useState } from "react";
 const RoomDetails = () => {
 
     const dataLoaded = useLoaderData({})
-
+    const { id } = useParams()
+    // const idInt = parseInt(id)
     const [bookingData, setBookingData] = useState('')
     // const [match, setMatch] = useState('')
     // console.log(match);
     // const [dateMatch, setDateMatch] = useState('')
+    const [detailsData, setDetailsData] = useState('')
+
+    useEffect(() => {
+        const findDetails = dataLoaded.find(item => item._id == id)
+        setDetailsData(findDetails)
+    }, [dataLoaded, id])
+
+    const { _id, title, description, img, internet, price, room_size, bed, park, market, lake, restaurants, cafe, shop } = detailsData || {}
 
 
-    const { _id, title, description, img, internet, price, room_size, bed, park, market, lake, restaurants, cafe, shop } = dataLoaded || {}
+
 
     useEffect(() => {
         fetch('http://localhost:4100/bookings')
