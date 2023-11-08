@@ -1,22 +1,14 @@
-import { useLoaderData, useParams } from "react-router-dom";
+import { Link, useLoaderData, useParams } from "react-router-dom";
 import PageTitle from "../PageTitle";
 import { useEffect, useState } from "react";
-import useAuth from "../../Hooks/useAuth";
-import toast from "react-hot-toast";
-
-
 
 const RoomDetails = () => {
 
 
     const dataLoaded = useLoaderData({})
     const { id } = useParams()
-    const { user } = useAuth()
-    // const idInt = parseInt(id)
-    // const [bookingData, setBookingData] = useState('')
-    // const [match, setMatch] = useState('')
-    // console.log(match);
-    // const [dateMatch, setDateMatch] = useState('')
+
+
     const [detailsData, setDetailsData] = useState('')
 
     useEffect(() => {
@@ -24,52 +16,10 @@ const RoomDetails = () => {
         setDetailsData(findDetails)
     }, [dataLoaded, id])
 
-    const { title, description, img, internet, price, room_size, bed, park, market, lake, restaurants, cafe, shop } = detailsData || {}
+    const { _id, title, description, img, internet, price, room_size, bed, park, market, lake, restaurants, cafe, shop } = detailsData || {}
 
 
 
-
-
-
-    const handleBooked = e => {
-        e.preventDefault()
-        const date = e.target.date.value;
-
-        const booking = {
-            date: date,
-            email: user.email,
-            price: price,
-            room_name: title,
-            image: img
-
-        }
-
-        console.log(booking);
-
-
-
-        fetch('https://server-site-sepia.vercel.app/bookings', {
-            method: 'POST',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(booking)
-
-        })
-
-            .then(res => res.json())
-            .then(data => {
-                console.log(data)
-                if (data.insertedId) {
-                    toast.success('Booking successful')
-                }
-
-            })
-
-
-        // ---------------------
-
-    }
 
 
 
@@ -91,10 +41,7 @@ const RoomDetails = () => {
             </div>
 
             <div className=" w-full py-5">
-                <form onSubmit={handleBooked}>
-                    <input type="date" name="date" className="p-3 border" /> <br />
-                    <button className="btn mt-5">Booked Now</button>
-                </form>
+                <Link to={`/booking-form/${_id}`} className="btn mt-5">Booked Now</Link>
             </div>
 
 

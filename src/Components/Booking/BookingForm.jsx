@@ -53,7 +53,7 @@ const BookingForm = () => {
             .then(data => {
                 console.log(data)
                 if (data.insertedId) {
-                    toast.success('Login successful')
+                    toast.success('Booking successful')
                 }
 
             })
