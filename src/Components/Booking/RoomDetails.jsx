@@ -1,6 +1,8 @@
-import { Link, useLoaderData, useParams } from "react-router-dom";
+import { useLoaderData, useParams } from "react-router-dom";
 import PageTitle from "../PageTitle";
 import { useEffect, useState } from "react";
+import useAuth from "../../Hooks/useAuth";
+import toast from "react-hot-toast";
 
 
 
@@ -9,6 +11,7 @@ const RoomDetails = () => {
 
     const dataLoaded = useLoaderData({})
     const { id } = useParams()
+    const { user } = useAuth()
     // const idInt = parseInt(id)
     // const [bookingData, setBookingData] = useState('')
     // const [match, setMatch] = useState('')
@@ -21,23 +24,54 @@ const RoomDetails = () => {
         setDetailsData(findDetails)
     }, [dataLoaded, id])
 
-    const { _id, title, description, img, internet, price, room_size, bed, park, market, lake, restaurants, cafe, shop } = detailsData || {}
+    const { title, description, img, internet, price, room_size, bed, park, market, lake, restaurants, cafe, shop } = detailsData || {}
 
 
 
 
-    // useEffect(() => {
-    //     fetch('http://localhost:4100/bookings')
-    //         .then(res => res.json())
-    //         .then(data => setBookingData(data))
-
-    //     // const roomMatch = bookingData.find(item => item.room_name == title)
-    //     // setMatch(roomMatch)
-
-    //     // const date = bookingData.find(item => item.date == title)
 
 
-    // }, [title, bookingData])
+    const handleBooked = e => {
+        e.preventDefault()
+        const date = e.target.date.value;
+
+        const booking = {
+            date: date,
+            email: user.email,
+            price: price,
+            room_name: title,
+            image: img
+
+        }
+
+        console.log(booking);
+
+
+
+        fetch('https://server-site-sepia.vercel.app/bookings', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(booking)
+
+        })
+
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                if (data.insertedId) {
+                    toast.success('Booking successful')
+                }
+
+            })
+
+
+        // ---------------------
+
+    }
+
+
 
 
     return (
@@ -56,7 +90,14 @@ const RoomDetails = () => {
                 <p><span className="text-lg font-medium">Price : </span>{price}</p>
             </div>
 
-            <Link to={`/booking-form/${_id}`} className="btn mt-10">Booked Now</Link>
+            <div className=" w-full py-5">
+                <form onSubmit={handleBooked}>
+                    <input type="date" name="date" className="p-3 border" /> <br />
+                    <button className="btn mt-5">Booked Now</button>
+                </form>
+            </div>
+
+
 
             <div className="md:flex gap-10 lg:gap-20 my-10 md:my-20">
                 <div className="">
@@ -73,16 +114,6 @@ const RoomDetails = () => {
                     <p className="text-base">{shop}</p>
                 </div>
             </div>
-
-            {/* <section>
-                <h4>Customer Review</h4>
-                <div className="p-7 w-1/2 border">
-                    <p>Name : {user.displayName}</p>
-                    <p>Rating : {rating}</p>
-                    <p>Comment : {comment}</p>
-                </div>
-            </section> */}
-
 
         </div>
     );

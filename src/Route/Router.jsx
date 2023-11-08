@@ -35,18 +35,18 @@ const createRouter = createBrowserRouter([
             {
                 path: 'rooms',
                 element: <HotelRooms></HotelRooms>,
-                loader: () => fetch(`http://localhost:4100/rooms`)
+                loader: () => fetch(`https://server-site-sepia.vercel.app/rooms`)
             },
 
             {
                 path: 'room-details/:id',
                 element: <RoomDetails></RoomDetails>,
-                loader: () => fetch(`http://localhost:4100/rooms`)
+                loader: () => fetch(`https://server-site-sepia.vercel.app/rooms`)
             },
             {
                 path: 'booking-form/:id',
                 element: <PrivateRouter><BookingForm></BookingForm></PrivateRouter>,
-                loader: () => fetch(`http://localhost:4100/rooms`)
+                loader: () => fetch(`https://server-site-sepia.vercel.app/rooms`)
             },
             {
                 path: 'my-booking',
@@ -54,8 +54,8 @@ const createRouter = createBrowserRouter([
             },
             {
                 path: 'booking-update/:id',
-                element: <BookingUpdate></BookingUpdate>,
-                loader: ({ params }) => fetch(`http://localhost:4100/bookings/${params.id}`)
+                element: <BookingUpdate></BookingUpdate>
+
             },
             {
                 path: 'contact-us',

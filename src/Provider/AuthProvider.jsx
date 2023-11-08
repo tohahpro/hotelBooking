@@ -50,36 +50,6 @@ const AuthProvider = ({ children }) => {
 
     }
 
-
-    useEffect(() => {
-        const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
-            const userEmail = currentUser?.email || user?.email
-            const loggedUser = { email: userEmail }
-            setUser(currentUser);
-            setLoading(false);
-
-            if (currentUser) {
-                axios.post("http://localhost:4100/jwt", loggedUser, { withCredentials: true })
-                    .then(res => {
-                        console.log('Token response', res.data);
-                    })
-
-            }
-            else {
-                axios.post("http://localhost:4100/logout", loggedUser, { withCredentials: true })
-                    .then(res => {
-                        console.log("Clear token", res.data);
-                    })
-            }
-        });
-
-        return () => {
-            return unSubscribe();
-        };
-    }, [user?.email]);
-
-    console.log(user)
-
     const authInfo = {
         google,
         user,
@@ -89,6 +59,41 @@ const AuthProvider = ({ children }) => {
         logout,
         userUpdate
     }
+
+    console.log(user)
+
+    useEffect(() => {
+        const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
+            const userEmail = currentUser?.email || user?.email
+
+            setUser(currentUser);
+            setLoading(false);
+
+
+            const loggedUser = { email: userEmail }
+            if (currentUser) {
+                axios.post("https://server-site-sepia.vercel.app/jwt", loggedUser, { withCredentials: true })
+                    .then(res => {
+                        console.log('Token response', res.data);
+                    })
+
+            }
+            else {
+                axios.post("https://server-site-sepia.vercel.app/logout", loggedUser, { withCredentials: true })
+                    .then(res => {
+                        console.log("Clear token", res.data);
+                    })
+            }
+        });
+
+        return () => {
+            return unSubscribe();
+        };
+    }, [user]);
+
+
+
+
     return (
         <AuthContext.Provider value={authInfo}>
             {children}

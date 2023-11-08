@@ -1,26 +1,26 @@
 import axios from "axios";
-import useAuth from "./useAuth";
-import { useNavigate } from "react-router-dom";
+// import useAuth from "./useAuth";
+// import { useNavigate } from "react-router-dom";
 
 
 const instance = axios.create({
-    baseURL: 'http://localhost:4100',
+    baseURL: 'https://server-site-sepia.vercel.app',
     withCredentials: true
 })
 const useAxios = () => {
 
-    const { logout } = useAuth()
-    const navigate = useNavigate()
+    // const { logout } = useAuth()
+    // const navigate = useNavigate()
     instance.interceptors.response.use(function (response) {
 
         return response;
-    }, function (error) {
+    }, function () {
 
         // return Promise.reject(error);
-        if (error.response.status === 401 || error.response.status === 403) {
-            logout()
-            navigate('/login')
-        }
+        // if (error.response.status === 401 || error.response.status === 403) {
+        //     // logout()
+        //     navigate('/login')
+        // }
     });
 
     return instance

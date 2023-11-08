@@ -40,7 +40,7 @@ const BookingForm = () => {
 
 
 
-        fetch('http://localhost:4100/bookings', {
+        fetch('https://server-site-sepia.vercel.app/bookings', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

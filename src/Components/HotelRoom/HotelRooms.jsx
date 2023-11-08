@@ -17,7 +17,7 @@ const HotelRooms = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:4100/rooms?sortField=price&sortOrder${price}`)
+        fetch(`https://server-site-sepia.vercel.app/rooms?sortField=price&sortOrder${price}`)
             .then(res => res.json())
             .then(data => setRoomData(data))
     }, [price])

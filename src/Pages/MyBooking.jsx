@@ -14,7 +14,7 @@ const MyBooking = () => {
     const axiosSecure = useAxios()
     const { user } = useAuth()
     const [bookings, setBookings] = useState([])
-    const url = `http://localhost:4100/bookings?email=${user?.email}`
+    const url = `https://server-site-sepia.vercel.app/bookings?email=${user?.email}`
 
 
     useEffect(() => {

@@ -23,19 +23,19 @@ const Login = () => {
         const password = e.target.password.value
         console.log(email, password);
 
-        // if (!/^(?=.*[a-z]).{8,}$/.test(password)) {
-        //     return toast.error("Password length must have 8 characters")
-        // }
+        if (!/^(?=.*[a-z]).{8,}$/.test(password)) {
+            return toast.error("Password length must have 8 characters")
+        }
 
-        // else if (!/(?=.*[!@#$%^&*])/.test(password)) {
-        //     return toast.error("Password must have a special character")
-        // }
-        // else if (!/(?=.*[A-Z])/.test(password)) {
-        //     return toast.error("Password must have a capital letter")
-        // }
-        // else if (!/(?=.*\d)/.test(password)) {
-        //     return toast.error("Password must have a number")
-        // }
+        else if (!/(?=.*[!@#$%^&*])/.test(password)) {
+            return toast.error("Password must have a special character")
+        }
+        else if (!/(?=.*[A-Z])/.test(password)) {
+            return toast.error("Password must have a capital letter")
+        }
+        else if (!/(?=.*\d)/.test(password)) {
+            return toast.error("Password must have a number")
+        }
 
 
         Login(email, password)
@@ -46,13 +46,16 @@ const Login = () => {
                     console.log(loggedInUser)
                     const user = { email }
                     // Get Access Token
-                    axios.post('http://localhost:4100/jwt', user, { withCredentials: true })
+                    axios.post('https://server-site-sepia.vercel.app/jwt', user, { withCredentials: true })
                         .then(res => {
                             console.log(res.data);
+                            if (res.data.success) {
+                                navigate(location?.state ? location.state : '/')
+                            }
                         })
                 }
 
-                navigate(location?.state ? location.state : '/')
+
 
 
 

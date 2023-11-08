@@ -7,6 +7,7 @@ import Slider from "../Components/Slider";
 import Subscribe from "../Components/Subscribe";
 import banner from '../assets/images/Cover1.jpeg'
 import { Link } from "react-router-dom";
+import Video from "../Components/Video";
 
 
 
@@ -50,6 +51,21 @@ const Home = () => {
                     </div>
                 </div>
 
+
+                <section className="my-20 lg:flex justify-between">
+
+                    <div className="flex-1">
+                        <Video></Video>
+                    </div>
+                    <div className="flex-1">
+                        <h3 className="text-xl md:text-3xl lg:text-5xl  text-center lg:text-end py-6 lg:pb-10">Discover Our Hotel.</h3>
+                        <div className="flex justify-center lg:justify-end">
+                            <p className="text-center lg:text-end w-2/3  text-base md:text-xl">Welcome to our exquisite hotel, where luxury meets comfort in every detail. Nestled in the heart of Dhaka, our hotel offers a haven of sophistication and relaxation. Our elegantly designed rooms and suites provide a perfect blend of modern amenities and timeless charm.</p>
+                        </div>
+                    </div>
+                </section>
+
+
                 <section className="">
                     <h2 className="text-center text-4xl md:text-7xl font-medium pt-10">Hotel Location</h2>
                     <div className="lg:flex lg:justify-between py-10 px-7 md:px-0">
@@ -59,6 +75,7 @@ const Home = () => {
                                 <p className="md:w-3/4 mx-auto lg:mx-0 text-center lg:text-start md:text-xl mt-10">Situated at House-06 Lake Dr Rd, Dhaka 1230, our hotel offers a perfect blend of comfort, convenience, and hospitality. Nestled in a serene neighborhood, we provide a peaceful escape from the bustling city life.</p>
                             </div>
                         </div>
+
                         <div className="flex-1">
                             <GoogleMap></GoogleMap>
                         </div>

@@ -8,7 +8,7 @@ const FeaturedRoom = () => {
     const [featured, setFeatured] = useState([])
 
     useEffect(() => {
-        fetch('http://localhost:4100/rooms')
+        fetch('https://server-site-sepia.vercel.app/rooms')
             .then(res => res.json())
             .then(data => setFeatured(data))
     }, [])
