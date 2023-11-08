@@ -24,19 +24,19 @@ const Login = () => {
         const password = e.target.password.value
         console.log(email, password);
 
-        // if (!/^(?=.*[a-z]).{8,}$/.test(password)) {
-        //     return toast.error("Password length must have 8 characters")
-        // }
+        if (!/^(?=.*[a-z]).{8,}$/.test(password)) {
+            return toast.error("Password length must have 8 characters")
+        }
 
-        // else if (!/(?=.*[!@#$%^&*])/.test(password)) {
-        //     return toast.error("Password must have a special character")
-        // }
-        // else if (!/(?=.*[A-Z])/.test(password)) {
-        //     return toast.error("Password must have a capital letter")
-        // }
-        // else if (!/(?=.*\d)/.test(password)) {
-        //     return toast.error("Password must have a number")
-        // }
+        else if (!/(?=.*[!@#$%^&*])/.test(password)) {
+            return toast.error("Password must have a special character")
+        }
+        else if (!/(?=.*[A-Z])/.test(password)) {
+            return toast.error("Password must have a capital letter")
+        }
+        else if (!/(?=.*\d)/.test(password)) {
+            return toast.error("Password must have a number")
+        }
 
 
         Login(email, password)

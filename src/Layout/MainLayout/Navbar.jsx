@@ -95,7 +95,7 @@ const Navbar = () => {
                                         <NavLink
                                             to="/login"
                                             className={({ isActive }) =>
-                                                isActive ? 'lg:px-6 lg:py-2 lg:border rounded-md mx-auto lg:bg-[#BEAD8E] text-[#BEAD8E] lg:text-white font-medium' : 'font-medium px-6 py-2 border rounded-md mx-auto'
+                                                isActive ? 'lg:px-6 lg:py-2 lg:border rounded-md mx-auto lg:bg-[#BEAD8E]  text-black lg:text-white font-medium' : 'font-medium px-6 py-2  rounded-md mx-auto text-black'
                                             }
                                         >
                                             Login

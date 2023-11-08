@@ -12,13 +12,12 @@ import Video from "../Components/Video";
 
 
 
-
 const Home = () => {
     return (
         <div className="bg-[#F8F8F8] ">
-            <div className="max-w-screen-xl mx-auto md:px-10">
+            <div className="md:px-10">
                 <PageTitle title={'Home page'}></PageTitle>
-                <div className="lg:flex pt-24">
+                <div className="lg:flex pt-24 max-w-screen-xl mx-auto">
                     <div className="flex-1 space-y-5 mt-20 mb-16">
                         <p className="text-center lg:text-start">THE ULTIMATE LUXURY EXPERIENCE</p>
                         <h1 className="text-2xl text-center lg:text-start md:text-4xl lg:text-7xl ">
@@ -52,7 +51,7 @@ const Home = () => {
                 </div>
 
 
-                <section className="my-20 lg:flex justify-between">
+                <section className="my-20 lg:flex justify-between max-w-screen-xl mx-auto">
 
                     <div className="flex-1">
                         <Video></Video>
@@ -66,7 +65,7 @@ const Home = () => {
                 </section>
 
 
-                <section className="">
+                <section className="max-w-screen-xl mx-auto">
                     <h2 className="text-center text-4xl md:text-7xl font-medium pt-10">Hotel Location</h2>
                     <div className="lg:flex lg:justify-between py-10 px-7 md:px-0">
                         <div className="flex-1 flex justify-center py-10">
@@ -83,9 +82,27 @@ const Home = () => {
                 </section>
 
                 <section>
+                    <div className="h-[35vh] lg:h-[60vh] w-full bg-center bg-cover offer">
+                        <div className="flex justify-end mr-8 lg:mr-20 z-50">
+                            <div className="text-[#BEAD8E] pt-10 lg:pt-24">
+                                <span className="lg:text-xl font-medium z-50">Enjoy Our Service</span>
+                                <h2 className="lg:text-8xl font-medium font-lora">Deluxe Room</h2>
+                                <div className="flex justify-center ">
+                                    <div className="w-16 h-16 lg:w-40 lg:h-40 rounded-full border flex items-center justify-center">
+                                        <p className="lg:text-5xl text-center font-bold"> 50% OFF</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </section>
+
+                <section className="max-w-screen-xl mx-auto">
                     <Slider></Slider>
                 </section>
-                <section>
+                <section className="max-w-screen-xl mx-auto">
 
                     <FeaturedRoom></FeaturedRoom>
                     <div className="flex justify-center">
@@ -93,7 +110,7 @@ const Home = () => {
                     </div>
                 </section>
 
-                <section>
+                <section className="max-w-screen-xl mx-auto">
                     <Subscribe></Subscribe>
                 </section>
             </div >
