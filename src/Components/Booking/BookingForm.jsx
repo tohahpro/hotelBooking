@@ -82,7 +82,7 @@ const BookingForm = () => {
     //     console.log(review);
 
 
-    //     fetch(`http://localhost:4100/rooms/${detailsData._id}`, {
+    //     fetch(`https://server-site-sepia.vercel.app/rooms/${detailsData._id}`, {
     //         method: 'PUT',
     //         headers: {
     //             'content-type': 'application/json'

@@ -2,7 +2,8 @@ import toast from "react-hot-toast";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import useAuth from "../../Hooks/useAuth";
-import useAxios from "../../Hooks/useAxios";
+import axios from "axios";
+
 
 
 const BookingUpdate = () => {
@@ -11,7 +12,7 @@ const BookingUpdate = () => {
 
 
     const { id } = useParams()
-    const axiosSecure = useAxios()
+
 
     const [loadData, setLoadData] = useState([])
     const [, setFindData] = useState('')
@@ -20,7 +21,7 @@ const BookingUpdate = () => {
 
     useEffect(() => {
 
-        axiosSecure.get(url, { withCredentials: true })
+        axios.get(url, { withCredentials: true })
             .then(res => {
                 setLoadData(res.data)
             })
@@ -30,7 +31,7 @@ const BookingUpdate = () => {
         const findDetails = loadData?.find(item => item._id == id)
         setFindData(findDetails)
 
-    }, [url, loadData, id, axiosSecure])
+    }, [url, loadData, id])
 
 
     const handleUpdateDate = e => {
@@ -41,7 +42,7 @@ const BookingUpdate = () => {
         const updateDate = { date };
         console.log(updateDate);
 
-        fetch(`http://localhost:4100/bookings/${id}`, {
+        fetch(`https://server-site-sepia.vercel.app/bookings/${id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

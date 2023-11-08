@@ -5,13 +5,14 @@ import { BsPencilFill } from 'react-icons/bs';
 import { MdDelete } from 'react-icons/md';
 import { Link } from "react-router-dom";
 
-import useAxios from "../Hooks/useAxios";
+
 import Swal from "sweetalert2";
+import axios from "axios";
 
 
 const MyBooking = () => {
 
-    const axiosSecure = useAxios()
+
     const { user } = useAuth()
     const [bookings, setBookings] = useState([])
     const url = `https://server-site-sepia.vercel.app/bookings?email=${user?.email}`
@@ -19,12 +20,12 @@ const MyBooking = () => {
 
     useEffect(() => {
 
-        axiosSecure.get(url, { withCredentials: true })
+        axios.get(url, { withCredentials: true })
             .then(res => {
                 setBookings(res.data)
             })
 
-    }, [url, axiosSecure]);
+    }, [url]);
 
 
 
@@ -40,7 +41,7 @@ const MyBooking = () => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                fetch(`http://localhost:4100/bookings/${id}`, {
+                fetch(`https://server-site-sepia.vercel.app/bookings/${id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())

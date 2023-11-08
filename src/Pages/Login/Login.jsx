@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { AiOutlineEyeInvisible, AiOutlineEye } from 'react-icons/ai';
 import login from '../../assets/images/login.image.png'
 import SocialLogin from "./SocialLogin";
@@ -7,12 +7,13 @@ import toast from "react-hot-toast";
 import useAuth from "../../Hooks/useAuth";
 import axios from "axios";
 
+
 const Login = () => {
 
     const [showPassword, setShowPassword] = useState(false)
 
-    const location = useLocation()
-    const navigate = useNavigate()
+    // const location = useLocation()
+    // const navigate = useNavigate()
 
     const { Login } = useAuth()
 
@@ -23,38 +24,36 @@ const Login = () => {
         const password = e.target.password.value
         console.log(email, password);
 
-        if (!/^(?=.*[a-z]).{8,}$/.test(password)) {
-            return toast.error("Password length must have 8 characters")
-        }
+        // if (!/^(?=.*[a-z]).{8,}$/.test(password)) {
+        //     return toast.error("Password length must have 8 characters")
+        // }
 
-        else if (!/(?=.*[!@#$%^&*])/.test(password)) {
-            return toast.error("Password must have a special character")
-        }
-        else if (!/(?=.*[A-Z])/.test(password)) {
-            return toast.error("Password must have a capital letter")
-        }
-        else if (!/(?=.*\d)/.test(password)) {
-            return toast.error("Password must have a number")
-        }
+        // else if (!/(?=.*[!@#$%^&*])/.test(password)) {
+        //     return toast.error("Password must have a special character")
+        // }
+        // else if (!/(?=.*[A-Z])/.test(password)) {
+        //     return toast.error("Password must have a capital letter")
+        // }
+        // else if (!/(?=.*\d)/.test(password)) {
+        //     return toast.error("Password must have a number")
+        // }
 
 
         Login(email, password)
             .then(res => {
+                const loggedInUser = res.user
+                console.log(loggedInUser);
+                const user = { email }
+
+                axios.post('https://server-site-sepia.vercel.app/jwt', user, { withCredentials: true })
+                    .then(res => {
+                        console.log(res.data)
+                    })
                 if (res.user) {
                     toast.success('Login successful')
-                    const loggedInUser = res.user;
-                    console.log(loggedInUser)
-                    const user = { email }
-                    // Get Access Token
-                    axios.post('https://server-site-sepia.vercel.app/jwt', user, { withCredentials: true })
-                        .then(res => {
-                            console.log(res.data);
-                            if (res.data.success) {
-                                navigate(location?.state ? location.state : '/')
-                            }
-                        })
                 }
 
+                // navigate(location?.state ? location.state : '/')
 
 
 
