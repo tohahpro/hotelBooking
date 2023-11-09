@@ -1,8 +1,12 @@
-# React + Vite
+-The user has the option to reserve a room of his choosing. chooses the day that works best for him
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+-The way this subscription is set up on the main page makes it simple for users to sign up.
 
-Currently, two official plugins are available:
+-The user may choose to modify the date that he has reserved a room. For him, the date update system is accessible.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+-For ease of viewing the dates the user has reserved any accommodation, there is a my bookings route. where the consumer can change his reservation.
+
+-JWT tokens are used to safeguard user booking information, preventing unauthorized access and harm.
+
+
+website-link : https://hotelroombooking10.netlify.app/
