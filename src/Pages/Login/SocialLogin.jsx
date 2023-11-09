@@ -18,7 +18,7 @@ const SocialLogin = () => {
         media()
             .then(res => {
                 if (res.user) {
-                    toast.success('Register successful')
+                    toast.success('Login successful')
                 }
                 navigate(location?.state ? location.state : '/')
 

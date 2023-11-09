@@ -12,15 +12,15 @@ const HotelRooms = () => {
     const [roomData, setRoomData] = useState(roomsDataLoad)
 
 
-    const [price, setPrice] = useState('')
+    const [asc, setAsc] = useState(true)
 
 
 
     useEffect(() => {
-        fetch(`https://server-site-sepia.vercel.app/rooms?sortField=price&sortOrder${price}`)
+        fetch(`https://server-site-sepia.vercel.app/rooms?sort=${asc ? 'asc' : 'desc'}`)
             .then(res => res.json())
             .then(data => setRoomData(data))
-    }, [price])
+    }, [asc])
 
 
 
@@ -29,11 +29,8 @@ const HotelRooms = () => {
 
             <PageTitle title={'All Room'}></PageTitle>
 
-            <div>
-                <select onChange={(e) => setPrice(e.target.value)} name="" id="">
-                    <option value="asc">From low to high</option>
-                    <option value="desc">From high to low</option>
-                </select>
+            <div className="my-8">
+                <button onClick={() => setAsc(!asc)} className="px-4 py-1 bg-[#BEAD8E] text-white font-medium rounded-lg">{asc ? 'Price High To Low' : 'Price Low To High'}</button>
             </div>
 
 

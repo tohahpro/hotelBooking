@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AiOutlineEyeInvisible, AiOutlineEye } from 'react-icons/ai';
 import login from '../../assets/images/login.image.png'
 import SocialLogin from "./SocialLogin";
@@ -12,8 +12,8 @@ const Login = () => {
 
     const [showPassword, setShowPassword] = useState(false)
 
-    // const location = useLocation()
-    // const navigate = useNavigate()
+    const location = useLocation()
+    const navigate = useNavigate()
 
     const { Login } = useAuth()
 
@@ -52,11 +52,7 @@ const Login = () => {
                 if (res.user) {
                     toast.success('Login successful')
                 }
-
-                // navigate(location?.state ? location.state : '/')
-
-
-
+                navigate(location?.state ? location.state : '/')
 
             })
             .catch(error => {
